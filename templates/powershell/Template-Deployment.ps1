@@ -103,11 +103,11 @@ function Get-TemplateParameterFilePath {
             }
         }
         # Print the contents of the parameter file
-        if (Test-Path -Path $parametersPath) {
-            $fileContents = Get-Content -Path $parametersPath
-            Write-Output "Contents of the parameter file:"
-            Write-Output $fileContents
-        }
+        #if (Test-Path -Path $parametersPath) {
+        #    $fileContents = Get-Content -Path $parametersPath
+        #    Write-Output "Contents of the parameter file:"
+        #    Write-Output $fileContents
+        #}
 
         return $parametersPath
     }
