@@ -102,13 +102,6 @@ function Get-TemplateParameterFilePath {
                 }
             }
         }
-        # Print the contents of the parameter file
-        #if (Test-Path -Path $parametersPath) {
-        #    $fileContents = Get-Content -Path $parametersPath
-        #    Write-Output "Contents of the parameter file:"
-        #    Write-Output $fileContents
-        #}
-
         return $parametersPath
     }
     
@@ -158,6 +151,8 @@ try {
     elseif ($Deploy) { Write-Host "Starting template deployment." }
     else { Write-Host "Starting template validation." }    
     Write-Host "Deployment name is $deploymentName"
+    Write-Host "Contents of the parameter file are:"
+    Get-Content -Path $templateParameterFile
 
     if ($WhatIf) { Invoke-CommandLine -Command $command }
     else { Invoke-CommandLine -Command $command | Out-Null }
